@@ -117,6 +117,8 @@ VALUES  (15,1,1),
 		(12,3,3),
 		(20,4,4)
 
+CREATE VIEW V_MovieSessionInfo
+AS
 SELECT C.Fullname 'CUSTOMER',S.StarDate,M.Name 'FILM',H.Name 'HALL',
 G.Type 'GENRE', A.Fullname 'ACTOR',T.Price FROM Tickets T
 
@@ -129,5 +131,5 @@ INNER JOIN Genres G ON MG.GenreId=G.Id
 INNER JOIN MoviesActors MA ON MA.MovieId=M.Id
 INNER JOIN Actors A ON MA.ActorId=A.Id
 
-
+SELECT * FROM V_MovieSessionInfo
 
